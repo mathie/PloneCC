@@ -3,7 +3,7 @@ from Products.Archetypes.Extensions.utils import installTypes, \
      install_subskin
 from cStringIO import StringIO
 
-from Products.PloneSkel.config import *
+from Products.PloneCC.config import *
 
 def install(self):
     out = StringIO()
