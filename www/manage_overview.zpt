@@ -1,0 +1,32 @@
+<html>
+  <body>
+    <h1 tal:replace="structure here/manage_page_header">Header</h1>
+    <span tal:replace="structure here/manage_tabs" /> 
+
+    <h3>Creative Commons Tool</h3>
+
+    <p>
+      Here is where you can select the <a
+      href="http://www.creativecommons.org/">Creative Commons</a>
+      license your site will, by default, be licensed under.  It adds
+      the appropriate markup (both visible and RDF metadata) to each
+      page which displays the plonecc portlet.  To choose a license, or
+      alter your existing choice, click the button below, which will
+      direct you through a questionnaire created by the folks at
+      Creative Commons, then return you to the ZMI.
+    </p>
+
+    <form type="get" action=""
+      tal:attributes="action here/getLicenseEngineUrl">
+      <input type="hidden" name="partner"
+        tal:attributes="value here/getPartner" />
+      <input type="hidden" name="exit_url"
+        tal:attributes="value here/getExitUrl" />
+      <input type="hidden" name="partner_icon_url"
+        tal:attributes="value here/getPartnerIconUrl" />
+      <input type="submit" value="Choose a License" />
+    </form>
+
+    <h1 tal:replace="structure here/manage_page_footer">Footer</h1>
+  </body>
+</html>

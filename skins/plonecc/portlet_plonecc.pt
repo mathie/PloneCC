@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Creative Commons Portlet</title>
+  </head>
+
+  <body>
+
+    <div tal:omit-tag="" tal:define="tool context/creativecommons_tool"
+      metal:define-macro="portlet">
+      <!-- Creative Commons License portlet -->
+      <div class="portlet" id="portlet-cclicense">
+        <h5>License</h5>
+        <div class="portletBody">
+          <div class="portletContent odd">
+            <a href="#"
+              tal:attributes="href tool/getLicenseUrl; title tool/getLicenseName">
+              <img src=""
+                tal:attributes="src tool/getButtonUrl; alt tool/getLicenseName" />
+            </a>
+          </div>
+          <div class="portletContent even" tal:condition="not:tool/isPublicDomain">
+            Except where otherwise noted, this site is licensed under a
+            <a tal:attributes="href tool/getLicenseUrl; title tool/getLicenseName">
+              Creative Commons License</a>
+          </div>
+          <div tal:condition="tool/isPublicDomain"
+            class="portletContent even">
+            This work is dedicated to the
+            <a tal:attributes="href tool/getLicenseUrl; title tool/getLicenseName">
+              Public Domain
+            </a>
+          </div>
+        </div>
+      </div>
+      <div tal:omit-tag=""
+        tal:content="structure python:tool.getRDFInformation(context)">
+        RDF Information.
+      </div>
+      <!-- /Creative Commons License portlet -->
+    </div>
+  </body>
+</html>
