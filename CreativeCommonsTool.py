@@ -32,8 +32,6 @@ class CreativeCommonsTool(UniqueObject, SimpleItemWithProperties):
          'label':'The button to signify the license'},
         {'id':'deed_url', 'type':'string', 'mode':'r',
          'label':'Deed URL'},
-        {'id':'copyright_text', 'type':'string', 'mode':'w',
-         'label':'Copyright text displayed on pages'},
         )
 
     license_url = ''
